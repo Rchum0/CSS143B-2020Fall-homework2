@@ -15,7 +15,11 @@ public class Problem1 {
                 int temp = nums[cur];
                 nums[cur] = nums[start];
                 nums[start] = temp;
-            }
+
+                cur++;
+                start++;
+            }else if()
+
         }
     }
 }
