@@ -1,4 +1,5 @@
 package Problem3;
+
 //MovieAction done
 public class MovieAction extends Movie {
 
@@ -24,13 +25,14 @@ public class MovieAction extends Movie {
     @Override
     public int calcLateFees(int numOfDaysPastDue) {
         //
-        int lateFee = 0;
-
-        if (numOfDaysPastDue < 5) {
-            lateFee = numOfDaysPastDue * lateFeePerDayInDollar;
-        } else if (numOfDaysPastDue > 5) {
-            lateFee = (2 * (numOfDaysPastDue * lateFeePerDayInDollar));
+        if (numOfDaysPastDue > 0 && numOfDaysPastDue < 5) {
+            int lateFee = numOfDaysPastDue * lateFeePerDayInDollar;
+            return lateFee;
+        } else if (numOfDaysPastDue >= 5) {
+            int lateFee = (2 * (numOfDaysPastDue * lateFeePerDayInDollar));
+            return lateFee;
+        } else {
+            return 0;
         }
-        return lateFee;
     }
 }
