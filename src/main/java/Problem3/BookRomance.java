@@ -1,5 +1,5 @@
 package Problem3;
-
+//BookRomance done 2
 public class BookRomance extends Book {
 
     private int lateFeePerDayInDollar = 4;
@@ -7,11 +7,13 @@ public class BookRomance extends Book {
     public BookRomance(String title, String author) {
         // homework
         // tip: use the 'super' keyword
+        super(title, author);
     }
 
     public BookRomance(BookRomance anotherBook) {
         // homework
         // tip: use the 'super' keyword
+        super(anotherBook);
     }
 
     @Override
@@ -22,5 +24,11 @@ public class BookRomance extends Book {
     @Override
     public int calcLateFees(int numOfDaysPastDue) {
         // homework
+        if (numOfDaysPastDue > 0) {
+            int lateFee = numOfDaysPastDue * lateFeePerDayInDollar;
+            return lateFee;
+        }else {
+            return 0;
+        }
     }
 }
